@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+输出hello数据
+这句使用 th:text="${变量名}" 表示 使用thymeleaf获取文本数据，类似于EL表达式。
+thymeleaf：都是作用于HTML标签之上
+-->
+<p th:text="${hello}"></p>
+
+<table border="1" >
+    <tr>
+        <td>下标</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>姓名</td>
+    </tr>
+    <tr th:each="user,status:${users}">
+        <td th:text="${status.count}">下标</td>
+        <td th:text="${user.username}">用户名</td>
+        <td th:text="${user.password}">密码</td>
+        <td th:text="${user.name}">姓名</td>
+    </tr>
+</table> 
+
+    <div th:each="map:${map}">
+        <span th:text="${map.key}"></span>
+        <span th:text="${map.value}"></span>
+    </div>
+
+</body>
+</html>
