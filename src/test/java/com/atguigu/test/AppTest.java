@@ -30,7 +30,8 @@ public class AppTest {
     public void testUser(){
         List<User> users = userService.findAll();
         for (User user : users) {
-            System.out.println(user);
+//            System.out.println(user);
+            System.out.println(user + "user");
         }
     }
 
